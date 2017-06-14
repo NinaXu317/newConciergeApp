@@ -1,0 +1,95 @@
+<!-- <head>
+  <title>Nina's DemoApp 2017</title>
+</head>
+
+<template name="main">
+  <h1>Main page</h1>
+</template>
+
+<template name="about">
+  <h1>About this app</h1>
+</template>
+
+<template name="layout">
+  <div class="container">
+    <h1>DemoApp 2017</h1>
+      {{> yield}}
+    <hr>
+    <a href="/">home</a>
+    <a href="abc/def/about">about/info</a>
+  </div>
+</template> -->
+
+<head>
+  <title>DemoApp 2017</title>
+</head>
+
+<template name="main">
+  <h1>Main page</h1>
+  <!-- {{> showpeople}}
+  {{> addperson}} -->
+<!-- {{> personrow}} -->
+  {{> showlocation}}
+  {{> addlocation}}
+</template>
+
+<template name="about">
+  <h1>About this app</h1>
+</template>
+
+<template name="layout">
+  <div class="container">
+    <h1>DemoApp 2017</h1>
+      {{> yield}}
+    <hr>
+    <a href="/">home</a>
+    <a href="/about">about</a>
+    {{> loginButtons}}
+  </div>
+</template>
+
+<template name="showpeople">
+  {{#each p in peoplelist}}
+    <li>{{p.name}}--{{p.birthyear}}</li>
+  {{/each}}
+</template>
+
+<template name="addlocation">
+  Name:<input type="text" id="name"><br>
+  Location:<input type="text" id="location"><br>
+  <button id="addlocation" class="btn btn-primary">
+    Add  to Collection
+  </button>
+</template>
+
+
+<template name="showlocation">
+  {{#each l in locationlist}}
+   <li>{{l.username}}--{{l.location}}</li>
+  {{/each}}
+</template>
+
+<template name="showperson">
+  {{#if currentUser}}
+  <ul>
+  {{#each p in peoplelist}}
+    <li>{{> personrow person=p}}</li>
+  {{/each}}
+  </ul>
+  {{else}}
+  <h1>You must log in to see the info!!</h1>
+  {{/if}}
+</template>
+
+<!-- <template name="personrow">
+  {{person.name}}--{{person.birthyear}}
+  <button class="glyphicon glyphicon-remove" aria-hidden> Delete</button>
+</template>
+
+<template name="addperson">
+  Name:<input type="text" id="name"><br>
+  Birthyear<input type="text" id="birthyear"><br>
+  <button id="addperson" class="btn btn-primary">
+    Add  to Collection
+  </button>
+</template> -->
